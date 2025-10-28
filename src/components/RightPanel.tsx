@@ -7,62 +7,79 @@ const RightPanel: React.FC = () => {
           Warning Details
         </h2>
         
-        {/* Empty State */}
-        <div className="text-center py-8">
-          <div className="text-4xl mb-3">🔍</div>
-          <p className="text-gray-500 text-sm">
-            Select a node to view details
-          </p>
-        </div>
-
-        {/* Table Placeholder */}
-        <div className="border border-gray-200 rounded-lg overflow-hidden">
-          <div className="bg-gray-50 px-4 py-2 border-b border-gray-200">
-            <h3 className="text-sm font-medium text-gray-700">
-              Warning Information
-            </h3>
-          </div>
+        {/* Warning Cards Container */}
+        <div className="space-y-3">
+          <h3 className="text-sm font-medium text-gray-700 mb-3">
+            Warning Information
+          </h3>
           
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead className="bg-gray-50">
-                <tr>
-                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Tool
-                  </th>
-                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Type
-                  </th>
-                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    Severity
-                  </th>
-                  <th className="px-3 py-2 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    File
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
-                {/* Placeholder rows */}
-                <tr>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                </tr>
-                <tr>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                </tr>
-                <tr>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                  <td className="px-3 py-2 text-gray-400">-</td>
-                </tr>
-              </tbody>
-            </table>
+          {/* Warning Cards */}
+          <div className="space-y-3 max-h-96 overflow-y-auto pr-2">
+            {/* Sample Warning Card 1 */}
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-red-800">High Severity</span>
+                </div>
+                <span className="text-xs text-red-600 bg-red-100 px-2 py-1 rounded">ESLint</span>
+              </div>
+              <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                Unused Variable
+              </h4>
+              <p className="text-xs text-gray-600 mb-2">
+                Variable 'unusedVar' is assigned but never used
+              </p>
+              <div className="text-xs text-gray-500">
+                📁 src/components/Example.tsx:15
+              </div>
+            </div>
+
+            {/* Sample Warning Card 2 */}
+            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-yellow-800">Medium Severity</span>
+                </div>
+                <span className="text-xs text-yellow-600 bg-yellow-100 px-2 py-1 rounded">TypeScript</span>
+              </div>
+              <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                Type Annotation Missing
+              </h4>
+              <p className="text-xs text-gray-600 mb-2">
+                Parameter 'data' implicitly has an 'any' type
+              </p>
+              <div className="text-xs text-gray-500">
+                📁 src/utils/helper.ts:8
+              </div>
+            </div>
+
+            {/* Sample Warning Card 3 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 hover:shadow-md transition-shadow">
+              <div className="flex items-start justify-between mb-2">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-sm font-medium text-blue-800">Low Severity</span>
+                </div>
+                <span className="text-xs text-blue-600 bg-blue-100 px-2 py-1 rounded">Prettier</span>
+              </div>
+              <h4 className="text-sm font-semibold text-gray-900 mb-1">
+                Code Formatting
+              </h4>
+              <p className="text-xs text-gray-600 mb-2">
+                Missing semicolon at end of statement
+              </p>
+              <div className="text-xs text-gray-500">
+                📁 src/components/Button.tsx:23
+              </div>
+            </div>
+
+            {/* Empty state when no warnings */}
+            <div className="text-center py-6 text-gray-400">
+              <div className="text-2xl mb-2">✅</div>
+              <p className="text-xs">No warnings found</p>
+            </div>
           </div>
         </div>
 

@@ -6,14 +6,17 @@
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  background: transparent;
+  background: #9ca3af;
   cursor: pointer;
+  border-radius: 4px;
+  height: 8px;
 }
 
 .slider::-webkit-slider-track {
-  background: #d1d5db;
+  background: #9ca3af;
   height: 8px;
   border-radius: 4px;
+  border: 1px solid #6b7280;
 }
 
 .slider::-webkit-slider-thumb {
@@ -33,10 +36,10 @@
 }
 
 .slider::-moz-range-track {
-  background: #d1d5db;
+  background: #9ca3af;
   height: 8px;
   border-radius: 4px;
-  border: none;
+  border: 1px solid #6b7280;
 }
 
 .slider::-moz-range-thumb {
